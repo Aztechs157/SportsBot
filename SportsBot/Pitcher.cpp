@@ -4,11 +4,11 @@
 #include "Controller.h"
 int GatePin = 9; 
 int GateSpeed = 180;
-int PitcherPinTop = 6;
-int PitcherPinBottom =;
+int PitcherPinTop = 7;
+int PitcherPinBottom = 6;
 int Rest = 90;
-int pitchSpeedTop = 180;
-int pitchSpeedBottom = 0;
+int pitcherSpeedTop = 180;
+int pitcherSpeedBottom = 0;
 Servo PitcherMotorTop;
 Servo PitcherMotorBottom;
 Servo Gate;
@@ -16,7 +16,8 @@ Servo Gate;
 void PitcherSetup()
 {  
   Gate.attach(GatePin);
-  Pitcher.attach(PitcherPin);
+  PitcherMotorTop.attach(PitcherPinTop);
+  PitcherMotorBottom.attach(PitcherPinBottom);
 }
 
 void PitcherLoop(void)
@@ -25,12 +26,14 @@ void PitcherLoop(void)
   if (ControllerGetL1()) {
     Serial.println("WindingUp");
     PitcherMotorTop.write(pitcherSpeedTop);
-    PitcherMotorBottom.write(pitcherSpeedBottom):
+    PitcherMotorBottom.write(pitcherSpeedBottom);
     
   }
   if (ControllerGetCircle()) {
     Serial.println("Rest.");
-    Pitcher.write(pitcherAtRest);
+    PitcherMotorTop.write(Rest);
+    PitcherMotorBottom.write(Rest);
+    
   }
   if (ControllerGetR2())
   {

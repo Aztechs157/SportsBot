@@ -2,50 +2,50 @@
 #include <Servo.h>
 #include "PS2X_lib.h"
 #include "Potentiometer.h"
-#include "Motor_Run.h"
+#include "Drive.h"
 #include "Controller.h"
 
 int SwitchVal;
-int MotorRightPin = 5;
-int MotorLeftPin = 4;
-int SwitchPin = 3;
-int motorCount = 0;
-Servo MotorRight;
-Servo MotorLeft;
+int DriveRightPin = 5;
+int DriveLeftPin = 4;
+/*int SwitchPin = 3;*/
+int driveCount = 0;
+Servo DriveRight;
+Servo DriveLeft;
 
-void MotorSetup()
+void DriveSetup()
 {
   
-  MotorRight.attach(MotorRightPin);
-  MotorLeft.attach(MotorLeftPin);
-  pinMode(SwitchPin,INPUT_PULLUP);
+  DriveRight.attach(DriveRightPin);
+  DriveLeft.attach(DriveLeftPin);
+  /*pinMode(SwitchPin,INPUT_PULLUP);*/
  
 }
-void MotorWithSwitch()
+void DriveWithSwitch()
 {
   
-   SwitchVal=digitalRead(SwitchPin);
+   /*SwitchVal=digitalRead(SwitchPin);*/
    if(SwitchVal == LOW)
    {
-       MotorLeft.write(75);
+       DriveLeft.write(75);
    }
    else if (SwitchVal == HIGH)
    {
        
-        MotorLeft.write(90);
+        DriveLeft.write(90);
    }
    else 
    {
  
-      MotorLeft.write(90);
+      DriveLeft.write(90);
    }
 }
-void MotorWithPot()
+void DriveWithPot()
 {
-  MotorLeft.write(PotLoop());
+  DriveLeft.write(PotLoop());
 }
  
-void MotorWithStick(void)
+void DriveWithStick(void)
 {
   int LY, DLY, RY, DRY;
 
@@ -54,18 +54,18 @@ void MotorWithStick(void)
   DRY = map(RY, 0, 255, 0, 180);
   DLY = map(LY, 0, 255, 0, 180);
   
-  if (++motorCount == 500) {
-    motorCount = 0;  
+  if (++driveCount == 500) {
+    driveCount = 0;  
     Serial.print("Stick value = ");
     Serial.print(LY);
     Serial.print(" ");
     Serial.print(RY);
-    Serial.print(" Motor value = ");
+    Serial.print(" Drive value = ");
     Serial.print(DLY);
     Serial.print(" ");
     Serial.println(DRY);
   }
-  MotorRight.write(DRY);
-  MotorLeft.write(DLY);
+  DriveRight.write(DRY);
+  DriveLeft.write(DLY);
 }
 

@@ -56,9 +56,9 @@ bool ControllerGetCircle(void) {
 }
 bool ControllerGetL1(void)
 {
-  return(ps2x.BUttonPressed(PSB_L1));
+  return(ps2x.ButtonPressed(PSB_L1));
 }
-bool ControllerGetCircle(void)
+bool ControllerGetR2(void)
 {
   return(ps2x.ButtonPressed(PSB_R2));
 }

@@ -1,5 +1,5 @@
 #include <Servo.h>
-#include "Motor_Run.h"
+#include "Drive.h"
 #include "Potentiometer.h"
 #include "Timer.h"
 #include "HeartBeat.h"
@@ -10,7 +10,7 @@
 void setup() {
   Serial.begin(230400);
   ControllerSetup();
-  MotorSetup();
+  DriveSetup();
   TimerSetup();
   HeartBeatSetup();
   PitcherSetup();
@@ -29,7 +29,7 @@ void loop()
     if (runRobot) {
 
       HeartBeatLoop();
-      MotorWithStick();
+      DriveWithStick();
       PitcherLoop();
     }
 

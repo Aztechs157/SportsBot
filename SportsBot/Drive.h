@@ -1,10 +1,10 @@
-#ifndef MOTOR_RUN_H
-#define MOTOR_RUN_H
+#ifndef DRIVE_H
+#define DRIVE_H
 
-void MotorSetup(void);
-void MotorWithSwitch(void);
-void MotorWithPot(void);
-void MotorWithStick(void);
+void DriveSetup(void);
+void DriveWithSwitch(void);
+void DriveWithPot(void);
+void DriveWithStick(void);
 
-#endif /* MOTOR_RUN_H */
+#endif /* Drive_H */
 
