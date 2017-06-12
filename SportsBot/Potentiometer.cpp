@@ -11,6 +11,7 @@ int PotLoop()
   Serial.print(PotVal);
   Serial.print("Digital pot value = ");
   Serial.println(DPotVal);
+  // input value , scale to zeroe , negate and resccale. f(x)= (-(x-90))+90 or f(x)= 180-x
   return DPotVal;
 }
 

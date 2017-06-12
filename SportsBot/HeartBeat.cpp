@@ -4,8 +4,8 @@
 
 unsigned int LEDPin = 2;
 
-unsigned int toggle = 0;  //used to keep the state of the LED
-unsigned int count = 0;   //used to keep count of how many interrupts were fired
+volatile unsigned int toggle = 0;  //used to keep the state of the LED
+volatile unsigned int count = 0;   //used to keep count of how many interrupts were fired
 
 void HeartBeatSetup(void) {
   pinMode(LEDPin, OUTPUT);
@@ -14,7 +14,7 @@ void HeartBeatSetup(void) {
 
 void HeartBeatLoop(void) {
   count++;               //Increments the interrupt counter
-  if(count > 24){
+  if(count > 99 ){
     toggle = !toggle;    //toggles the LED state
     count = 0;           //Resets the interrupt counter
   }

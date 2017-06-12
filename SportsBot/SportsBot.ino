@@ -14,6 +14,7 @@ void setup() {
   TimerSetup();
   HeartBeatSetup();
   PitcherSetup();
+  
 }
 
 void loop() 
@@ -21,7 +22,12 @@ void loop()
   static bool runController = true;
   static bool runRobot = false;
   
-  if (TimerCheck) {
+#if 0
+  if (TimerCheck()) {
+    HeartBeatLoop();
+  }
+#else
+  if (TimerCheck()) {
     if (runController) {
       ControllerLoop();
     }
@@ -37,4 +43,5 @@ void loop()
     runController = !runController;
     runRobot = !runRobot;
   }
+#endif
 }

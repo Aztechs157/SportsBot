@@ -51,10 +51,10 @@ void DriveWithStick(void)
 
   RY = ControllerGetRY();
   LY = ControllerGetLY();
-  DRY = map(RY, 0, 255, 0, 180);
-  DLY = map(LY, 0, 255, 0, 180);
+  DRY = map(RY, 0, 255, 180,0);
+  DLY = map(LY, 0, 255, 0, 180);// input value , scale to zeroe , negate and resccale. f(x)= (-(x-90))+90 or f(x)= 180-x
   
-  if (++driveCount == 500) {
+  if (++driveCount == 50) {
     driveCount = 0;  
     Serial.print("Stick value = ");
     Serial.print(LY);
