@@ -51,8 +51,8 @@ void DriveWithStick(void)
 
   RY = ControllerGetRY();
   LY = ControllerGetLY();
-  DRY = map(RY, 0, 255, 180,0);
-  DLY = map(LY, 0, 255, 0, 180);// input value , scale to zeroe , negate and resccale. f(x)= (-(x-90))+90 or f(x)= 180-x
+  DRY = map(RY, 0, 255, 135,45);
+  DLY = map(LY, 0, 255, 135,45);//(ended up being a wiring issue) changed map to reduce max speed of robot 
   
   if (++driveCount == 50) {
     driveCount = 0;  
