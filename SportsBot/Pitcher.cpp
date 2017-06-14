@@ -16,7 +16,7 @@ Servo PitcherMotorBottom;
 
 void PitcherSetup()
 {  
-  PitcherMotorTop.attach(PitcherPinTop);
+  PitcherMotorTop.attach(PitcherPinTop); 
   PitcherMotorBottom.attach(PitcherPinBottom);
   pinMode(LEDPort,OUTPUT);
   pinMode(GatePin,OUTPUT);
@@ -41,10 +41,17 @@ void PitcherLoop(void)
   }
   if (ControllerGetR2())
   {
-    Serial.print("pitch");
+    Serial.print("Pitch:Gate Open");
      // digitalWrite(LEDPort,HIGH);
     digitalWrite(GatePin,HIGH);
   }
+  if (ControllerGetR2Released())
+  {
+    Serial.print("Pitch:Gate Closed");
+    digitalWrite(GatePin,LOW);
+    
+  }
+  
     
 }
 

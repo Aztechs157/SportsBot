@@ -3,6 +3,7 @@
 
 void HeartBeatSetup(void);
 void HeartBeatLoop(void);
+boolean ESTOP(void);
 
 #endif /* HEARTBEAT_H */
 

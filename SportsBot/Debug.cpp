@@ -1,11 +1,12 @@
 #include <Arduino.h>
 
-void DebugSetup(void){
-
+DebugSetup(long baudrate)
+{
+  Serial.begin(baudrate);
 }
 
-
-void DebugPrintChar(char chr) {
+void DebugPrintChar(char chr) 
+{
   static int count = 0;
 
   if (count == 50) {
@@ -15,4 +16,8 @@ void DebugPrintChar(char chr) {
     Serial.print(chr);
   }
  }
+void DebugPrint(String data)
+{
+
+}
 

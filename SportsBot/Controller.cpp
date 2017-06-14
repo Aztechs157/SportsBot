@@ -54,6 +54,9 @@ bool ControllerGetTriangle(void) {
 bool ControllerGetCircle(void) {
   return(ps2x.ButtonPressed(PSB_CIRCLE));
 }
+bool ControllerGetCircleReleased(void) {
+  return(ps2x.ButtonReleased(PSB_CIRCLE));
+}
 bool ControllerGetL1(void)
 {
   return(ps2x.ButtonPressed(PSB_L1));
@@ -62,6 +65,11 @@ bool ControllerGetR2(void)
 {
   return(ps2x.ButtonPressed(PSB_R2));
 }
+bool ControllerGetR2Released(void)
+{
+  return(ps2x.ButtonReleased(PSB_R2));
+}
+
 
 void ControllerLoop(void) {
   ps2x.read_gamepad();          //read controller 
