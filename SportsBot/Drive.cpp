@@ -7,7 +7,7 @@
 
 int SwitchVal;
 int DriveRightPin = 5;
-int DriveLeftPin = 4;
+int DriveLeftPin = 4; 
 /*int SwitchPin = 3;*/
 int driveCount = 0;
 Servo DriveRight;
