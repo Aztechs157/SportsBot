@@ -6,9 +6,9 @@
 #include "PS2X_lib.h"
 #include "Controller.h"
 #include "Pitcher.h"
-
+#include "Debug.h"
 void setup() {
-  Serial.begin(230400);
+  DebugSetup(230400);
   ControllerSetup();
   DriveSetup();
   TimerSetup();
