@@ -8,7 +8,7 @@
 #include "Pitcher.h"
 #include "Debug.h"
 void setup() {
-  DebugSetup(230400);
+  Serial.begin(230400);
   ControllerSetup();
   DriveSetup();
   TimerSetup();

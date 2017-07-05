@@ -1,11 +1,12 @@
-/// wonky behavior caused by seerial so delete all serials 
+/* wonky behavior caused by seerial so delete all serials 
 
-// deadman switch implementation 
-// possible when presed in ps2x 
+deadman switch implementation 
+possible when presed in ps2x 
 or state machine 
 
-//
+
 with tewo states when pressed when released 
-figure implmentation out later// 
+figure implmentation out later
+*/
 
 
