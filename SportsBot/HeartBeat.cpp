@@ -21,10 +21,7 @@ void HeartBeatLoop(void) {
   digitalWrite(LEDPin,toggle);
   
 }
-boolean ESTOP(void)
-{ 
-  return (ControllerGetCircleReleased());
-}
+
 
 
 

@@ -1,6 +1,6 @@
 #include <Arduino.h>
 
-DebugSetup(long baudrate)
+void DebugSetup(long baudrate)
 {
   Serial.begin(baudrate);
 }

@@ -53,13 +53,14 @@ void DriveWithStick(void)
   LY = ControllerGetLY();
   DRY = map(RY, 0, 255, 135,45);
   DLY = map(LY, 0, 255, 135,45);//(ended up being a wiring issue) changed map to reduce max speed of robot 
-if(ESTOP())
+/*if(ESTOP())
 {
   DriveLeft.write(90);
   DriveRight.write(90);  
 }
 
 else
+*/
 {
   
 

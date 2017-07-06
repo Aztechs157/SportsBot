@@ -11,5 +11,8 @@ bool ControllerGetTriangle(void);
 bool ControllerGetL1(void);
 bool ControllerGetR2(void);
 bool ControllerGetR2Released(void);
+bool ControllerGetX(void);
+bool ControllerGetL2(void);
+
 #endif /* CONTROLLER_H */
 

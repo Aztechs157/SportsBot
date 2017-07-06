@@ -61,6 +61,10 @@ bool ControllerGetL1(void)
 {
   return(ps2x.ButtonPressed(PSB_L1));
 }
+bool  ControllerGetL2(void)
+{
+  return(ps2x.ButtonPressed(PSB_L2)); 
+}
 bool ControllerGetR2(void)
 {
   return(ps2x.ButtonPressed(PSB_R2));
@@ -69,9 +73,13 @@ bool ControllerGetR2Released(void)
 {
   return(ps2x.ButtonReleased(PSB_R2));
 }
-
+bool ControllerGetX(void)
+{
+  return(ps2x.ButtonPressed(PSAB_CROSS));
+}
 
 void ControllerLoop(void) {
   ps2x.read_gamepad();          //read controller 
 }
+
 
